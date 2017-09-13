@@ -197,15 +197,14 @@
                         </ul>
                 
                     </div><!--/.nav-collapse -->
-                    @guest
+                  
                     <div class="nav-mini-wrapper">
                         <ul class="nav-mini">
+                          @guest
                             <li><a data-toggle="modal" href="#registerModal"><i class="icon-user-follow" data-toggle="tooltip" data-placement="bottom" title="sign up"></i></a></li>
                             <li><a data-toggle="modal" href="#loginModal"><i class="icon-login" data-toggle="tooltip" data-placement="bottom" title="login"></i> </a></li>
-                        </ul>
-                    </div>
-                      @else
-                       <li class="dropdown">
+                            @else
+                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
@@ -225,6 +224,11 @@
                                 </ul>
                             </li>
                              @endguest
+
+                        </ul>
+                    </div>
+                      
+                      
                 
                 </div>
                 
@@ -1220,12 +1224,13 @@
                     <div><span>or</span></div>
                 </div>
             </div>
-            <form action="">
+           <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+           {{ csrf_field() }}
             <div class="col-sm-12 col-md-12">
-    
+            
                 <div class="form-group"> 
-                    <label>Username</label>
-                    <input class="form-control" placeholder="Min 4 and Max 10 characters" type="text"> 
+                    <label>Email</label>
+                    <input class="form-control" placeholder="Min 4 and Max 10 characters" name="email" type="text"> 
                 </div>
             
             </div>
@@ -1234,7 +1239,7 @@
             
                 <div class="form-group"> 
                     <label>Password</label>
-                    <input class="form-control" placeholder="Min 4 and Max 10 characters" type="text"> 
+                    <input class="form-control" placeholder="Min 4 and Max 10 characters"  name="password"type="text"> 
                 </div>
             
             </div>
