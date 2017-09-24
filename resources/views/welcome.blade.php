@@ -452,7 +452,7 @@
                         <div class="GridLex-gap-20 GridLex-gap-15-mdd GridLex-gap-10-xs">
                     
                             <div class="GridLex-grid-noGutter-equalHeight">
-                            @foreach($package as $item)
+                          <!--   @foreach($package as $item)
                             
                                 <div class="GridLex-col-4_mdd-4_sm-6_xs-6_xss-12">
                                     
@@ -503,7 +503,7 @@
                                     </div>
                                 
                                 </div>
-                                @endforeach
+                                @endforeach -->
                                
                                                              
 
