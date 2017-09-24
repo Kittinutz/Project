@@ -14,7 +14,11 @@ class CreatePlacesDatabase extends Migration
     public function up()
     {
         Schema::create('places', function (Blueprint $table) {
-            $table->increments('id');
+          $table->increments('id');
+            $table->string('name');
+            $table->string('location');
+            $table->binary('images');
+            $table->string('rating');
             $table->timestamps();
         });
     }
